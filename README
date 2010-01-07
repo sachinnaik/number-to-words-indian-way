@@ -1,0 +1,14 @@
+It converts the number in words the way it is written in India.
+eg. 100000 in US it is written as 'one hundred thousand' and in India its written as 'one lakh'
+
+After downloading the file copy it in the lib directory of your rails application.
+Include it in the model in which you want to convert the number into words.
+
+class Account < ActiveRecord::Base
+  include NumberToWord
+end
+
+then in the view where you actually convert into words,
+<%=h account.to_word(account.amount) %>
+
+here account is the object of Account model. 
